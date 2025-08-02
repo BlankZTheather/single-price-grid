@@ -17,6 +17,7 @@ body {
 }
 
 main {
+  @include u.border-radius-all();
   @include u.desktop-media {
     display: grid;
     grid-template-areas:
@@ -25,6 +26,12 @@ main {
   }
   inline-size: clamp(250px, calc(100% - 2.5rem), 700px);
   margin-block: clamp(3em, 5vw, 4em);
+  $color: u.get-color("gray500");
+  $light: -4%;
+  box-shadow: 0 2px 2px u.adjust-color($color, $lightness: $light),
+  0 6px 8px u.adjust-color($color, -0.6, $light),
+  0 12px 16px u.adjust-color($color, -0.7, $light),
+  0 24px 34px u.adjust-color($color, -0.8, $light);
 }
 
 section {

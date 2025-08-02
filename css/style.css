@@ -38,8 +38,13 @@ body {
 }
 
 main {
+  border-start-start-radius: 7px;
+  border-start-end-radius: 7px;
+  border-end-start-radius: 7px;
+  border-end-end-radius: 7px;
   inline-size: clamp(250px, 100% - 2.5rem, 700px);
   margin-block: clamp(3em, 5vw, 4em);
+  box-shadow: 0 2px 2px hsl(218, 22%, 63%), 0 6px 8px hsla(218, 22%, 63%, 0.4), 0 12px 16px hsla(218, 22%, 63%, 0.3), 0 24px 34px hsla(218, 22%, 63%, 0.2);
 }
 @media (min-width: 47rem) {
   main {
