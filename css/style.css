@@ -1,0 +1,136 @@
+main section:first-child h2 {
+  margin-block-start: 1.375em;
+}
+
+h1, h2 {
+  margin-block-start: 0;
+}
+
+h1, h2, button, main section:nth-child(2) p:first-of-type span {
+  font-weight: 700;
+}
+
+p, li, h2, button, main section:nth-child(2) p:first-of-type span {
+  color: hsl(204, 43%, 93%);
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("../fonts/Karla/Karla-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Karla";
+  src: url("../fonts/Karla/Karla-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+html {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+body {
+  background-color: hsl(204, 43%, 93%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  inline-size: clamp(250px, 100% - 2.5rem, 700px);
+  margin-block: clamp(3em, 5vw, 4em);
+}
+@media (min-width: 47rem) {
+  main {
+    display: grid;
+    grid-template-areas: "intro intro" "subscription whyus";
+  }
+}
+
+section {
+  background-color: hsl(179, 62%, 43%);
+  padding-inline: clamp(1.5em, 1rem + 4vw, 2.5em);
+  padding-block: clamp(1.75em, 1rem + 4vw, 3em);
+}
+
+h1 {
+  color: hsl(179, 62%, 43%);
+  font-size: clamp(1.375em, 1rem + 1vw, 1.5em);
+}
+
+h2 {
+  font-size: clamp(1.125em, 0.875rem + 0.625vw, 1.25em);
+}
+
+p {
+  line-height: 1.8;
+}
+
+ul {
+  padding-inline: 0;
+  line-height: 1.5;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border-inline: 0;
+  border-block: 0;
+  border-start-start-radius: 7px;
+  border-start-end-radius: 7px;
+  border-end-start-radius: 7px;
+  border-end-end-radius: 7px;
+  font-size: clamp(0.875em, 0.75rem + 0.4375vw, 1em);
+  background-color: hsl(71, 73%, 54%);
+  inline-size: 100%;
+  block-size: 3.5em;
+  margin-block-start: 1em;
+  box-shadow: 0 3px 3px hsl(179, 62%, 35%), 0 9px 9px hsl(179, 62%, 39%), 0 14px 14px hsl(179, 62%, 41%);
+  transition: 0.2s opacity;
+}
+button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+button:active {
+  opacity: 0.7;
+}
+
+main section:first-child {
+  border-start-start-radius: 7px;
+  border-start-end-radius: 7px;
+  background-color: hsl(0, 0%, 100%);
+  grid-area: intro;
+}
+main section:first-child h2 {
+  color: hsl(71, 73%, 54%);
+}
+main section:first-child p {
+  color: hsl(218, 22%, 67%);
+}
+@media (min-width: 47rem) {
+  main section:nth-child(2) {
+    border-end-start-radius: 7px;
+  }
+}
+main section:nth-child(2) p:first-of-type {
+  color: hsla(204, 43%, 93%, 0.7);
+}
+main section:nth-child(2) p:first-of-type span {
+  font-size: clamp(1.75em, 0.875rem + 2vw, 2em);
+}
+main section:nth-child(3) {
+  border-end-start-radius: 7px;
+  border-end-end-radius: 7px;
+  background-color: hsla(179, 62%, 43%, 0.9);
+}
+@media (min-width: 47rem) {
+  main section:nth-child(3) {
+    border-end-end-radius: 7px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

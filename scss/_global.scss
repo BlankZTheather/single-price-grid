@@ -1,0 +1,87 @@
+@use "utility" as u;
+@forward "utility";
+
+@include u.font-face-karla(1);
+@include u.font-face-karla(-1);
+html {
+  font-family: u.get-font("name"), sans-serif;
+  font-weight: 400;
+  font-size: u.get-base-font-size();
+}
+
+body {
+  background-color: u.get-color("teal100");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  @include u.desktop-media {
+    display: grid;
+    grid-template-areas:
+    "intro intro"
+    "subscription whyus";
+  }
+  inline-size: clamp(250px, calc(100% - 2.5rem), 700px);
+  margin-block: clamp(3em, 5vw, 4em);
+}
+
+section {
+  background-color: u.get-color("teal500");
+  padding-inline: clamp(1.5em, calc(1rem + 4vw), 2.5em);
+  padding-block: clamp(1.75em, calc(1rem + 4vw), 3em);
+}
+
+h1 {
+  @extend %bold;
+  @extend %no-margin-top;
+  color: u.get-color("teal500");
+  font-size: clamp(1.375em, calc(1rem + 1vw), 1.5em);
+}
+
+h2 {
+  @extend %white-bold;
+  @extend %no-margin-top;
+  font-size: clamp(1.125em, calc(0.875rem + 0.625vw), 1.25em);
+}
+
+p {
+  @extend %white-color;
+  line-height: 1.8;
+}
+
+ul {
+  padding-inline: 0;
+  line-height: 1.5;
+}
+
+li {
+  @extend %white-color;
+  list-style: none;
+}
+
+button {
+  @extend %white-bold;
+  @include u.border-none();
+  @include u.border-radius-all();
+  font-size: clamp(0.875em, calc(0.75rem + 0.4375vw), 1em);
+  background-color: u.get-color("green400");
+  inline-size: 100%;
+  block-size: 3.5em;
+  margin-block-start: 1em;
+  $color: u.get-color("teal500");
+  box-shadow: 0 3px 3px u.adjust-color($color, $lightness: -8%),
+  0 9px 9px u.adjust-color($color, $lightness: -4%),
+  0 14px 14px u.adjust-color($color, $lightness: -2%);
+  transition: 0.2s opacity;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

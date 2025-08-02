@@ -1,0 +1,17 @@
+//Variables
+$desktop: "(min-width: 47rem)";
+$color: (
+        "white": hsl(0, 0%, 100%),
+        "teal500": hsl(179, 62%, 43%),
+        "green400": hsl(71, 73%, 54%),
+        "teal100": hsl(204, 43%, 93%),
+        "gray500": hsl(218, 22%, 67%)
+);
+
+$fontKarla: (
+        "name": "Karla",
+        "urls": "../fonts/Karla/Karla-Regular.ttf" "../fonts/Karla/Karla-Bold.ttf",
+        "weights": 400 700
+);
+$borderRadius: 7px;
+$baseFontSize: 16px;

@@ -1,0 +1,41 @@
+@use "global" as g;
+
+main section {
+  &:first-child {
+    @include g.border-radius(true, true);
+    background-color: g.get-color("white");
+    grid-area: intro;
+
+    & h2 {
+      @extend %margin-top;
+      color: g.get-color("green400");
+    }
+
+    & p {
+      color: g.get-color("gray500");
+    }
+  }
+
+  &:nth-child(2) {
+    @include g.desktop-media {
+      @include g.border-radius($bL: true);
+    }
+
+    & p:first-of-type {
+      color: g.adjust-color(g.get-color("teal100"), -0.3);
+
+      span {
+        @extend %white-bold;
+        font-size: clamp(1.75em, calc(0.875rem + 2vw), 2em);
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    @include g.border-radius($bL: true, $bR: true);
+    @include g.desktop-media {
+      @include g.border-radius($bR: true);
+    }
+    background-color: g.adjust-color(g.get-color("teal500"), -0.1);
+  }
+}

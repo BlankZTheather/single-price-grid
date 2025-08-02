@@ -1,0 +1,86 @@
+@use 'base';
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:color';
+
+//Mixins
+@mixin desktop-media() {
+  @media #{base.$desktop} {
+    @content;
+  }
+}
+
+@mixin border-none() {
+  border-inline: 0;
+  border-block: 0;
+}
+
+@mixin border-radius-all() {
+  @include border-radius(true, true, true, true);
+}
+
+@mixin border-radius($tL:false,$tR:false,$bL:false,$bR:false) {
+  @if $tL {
+    border-start-start-radius: base.$borderRadius;
+  }
+  @if $tR {
+    border-start-end-radius: base.$borderRadius;
+  }
+  @if $bL {
+    border-end-start-radius: base.$borderRadius;
+  }
+  @if $bR {
+    border-end-end-radius: base.$borderRadius;
+  }
+}
+
+@mixin font-face-karla($i) {
+  @font-face {
+    font-family: get-font("name");
+    src: url("#{get-font-list("urls",$i)}") format("truetype");
+    font-weight: get-font-list("weights", $i);
+  }
+}
+
+//Functions
+@function adjust-color($color,$alpha:0,$lightness:0%) {
+  @return color.adjust($color, $alpha: $alpha, $lightness: $lightness);
+}
+
+@function get-base-font-size() {
+  @return base.$baseFontSize;
+}
+
+@function get-color($color) {
+  @return map.get(base.$color, $color);
+}
+
+@function get-font($key) {
+  @return map.get(base.$fontKarla, $key);
+}
+
+@function get-font-list($key,$i) {
+  @return list.nth(get-font($key), $i);
+}
+
+//Placeholders
+%margin-top {
+  margin-block-start: 1.375em;
+}
+
+%no-margin-top {
+  margin-block-start: 0;
+}
+
+%bold {
+  font-weight: 700;
+}
+
+%white-color {
+  color: get-color("teal100");
+}
+
+%white-bold {
+  @extend %bold;
+  @extend %white-color;
+}
