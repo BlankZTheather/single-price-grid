@@ -26,5 +26,5 @@ Users should be able to:
 
 ### Links
 
-- [My Submission]()
+- [My Submission](https://www.frontendmentor.io/solutions/single-price-grid-using-scss-sass-D57b1niQZX)
 - [Live Site](https://blankztheather.github.io/single-price-grid)
